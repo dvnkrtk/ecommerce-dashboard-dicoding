@@ -22,3 +22,7 @@ Pastikan Python sudah terinstal di komputermu. Buka terminal atau command prompt
 pip install -r requirements.txt
 cd dashboard
 streamlit run dashboard.py
+
+```bash
+cd dashboard
+streamlit run dashboard.py
