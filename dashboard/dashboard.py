@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
 
 # Mengatur tema seaborn
 sns.set_theme(style="darkgrid")
@@ -21,12 +22,16 @@ def create_customer_demographics_df(df):
 # Menggunakan st.cache_data agar data tidak dimuat ulang setiap kali ada interaksi
 @st.cache_data
 def load_data():
-    df = pd.read_csv("dashboard/main_data.csv")
-    # Pastikan kolom waktu bertipe datetime
+    # Mendapatkan lokasi direktori tempat file dashboard.py ini berada
+    current_dir = os.path.dirname(__file__)
+
+    # Menggabungkan lokasi tersebut dengan nama file CSV
+    file_path = os.path.join(current_dir, "main_data.csv")
+
+    # Membaca file CSV dari jalur yang sudah dipastikan benar
+    df = pd.read_csv(file_path)
     df["order_purchase_timestamp"] = pd.to_datetime(df["order_purchase_timestamp"])
     return df
-
-all_df = load_data()
 
 # 3. Komponen Sidebar (Filter)
 min_date = all_df["order_purchase_timestamp"].dt.date.min()
