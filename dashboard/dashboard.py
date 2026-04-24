@@ -21,7 +21,7 @@ def create_customer_demographics_df(df):
 # Menggunakan st.cache_data agar data tidak dimuat ulang setiap kali ada interaksi
 @st.cache_data
 def load_data():
-    df = pd.read_csv("main_data.csv")
+    df = pd.read_csv("dashboard/main_data.csv")
     # Pastikan kolom waktu bertipe datetime
     df["order_purchase_timestamp"] = pd.to_datetime(df["order_purchase_timestamp"])
     return df
