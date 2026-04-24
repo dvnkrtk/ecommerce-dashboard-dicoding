@@ -15,7 +15,7 @@ Tujuan utama dari dasbor ini adalah untuk memberikan wawasan bisnis (business in
 
 ## Cara Menjalankan Dasbor (Lokal)
 
-### 1. Setup Environment
+### Setup Environment
 Pastikan Python sudah terinstal di komputermu. Buka terminal atau command prompt, lalu instal semua library yang dibutuhkan dengan menjalankan perintah berikut:
 
 ```bash
