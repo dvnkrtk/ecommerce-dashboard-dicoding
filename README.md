@@ -23,6 +23,5 @@ pip install -r requirements.txt
 cd dashboard
 streamlit run dashboard.py
 
-```bash
 cd dashboard
 streamlit run dashboard.py
